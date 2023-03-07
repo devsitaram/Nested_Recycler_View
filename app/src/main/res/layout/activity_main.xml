@@ -81,6 +81,7 @@
                 tools:ignore="ScrollViewSize">
 
                 <TextView
+                    android:id="@+id/tv_navForYou"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
@@ -90,6 +91,7 @@
                     tools:ignore="HardcodedText" />
 
                 <TextView
+                    android:id="@+id/tv_navTopCharts"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
@@ -99,6 +101,7 @@
                     tools:ignore="HardcodedText" />
 
                 <TextView
+                    android:id="@+id/tv_navChildren"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
@@ -108,6 +111,7 @@
                     tools:ignore="HardcodedText" />
 
                 <TextView
+                    android:id="@+id/tv_navPremium"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
@@ -117,6 +121,7 @@
                     tools:ignore="HardcodedText" />
 
                 <TextView
+                    android:id="@+id/tv_navCategoties"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"

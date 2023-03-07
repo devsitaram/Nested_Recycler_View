@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.nestedrecyclerview.FragmentsView.AppsFragment;
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button btnNotification;
     ImageView ivUserProfile;
+    TextView tvNavbarForYou, tvNavbarTopChart, tvNavbarChildren, tvNavbarPremium,tvNavbarCategory;
     @SuppressLint({"NotifyDataSetChanged", "MissingInflatedId"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,12 @@ public class MainActivity extends AppCompatActivity {
         AppsFragment appsFragment = new AppsFragment();
         ivUserProfile= findViewById(R.id.iv_userProfile);
         btnNotification =findViewById(R.id.btn_notification);
+
+        tvNavbarForYou=findViewById(R.id.tv_navForYou);
+        tvNavbarTopChart=findViewById(R.id.tv_navTopCharts);
+        tvNavbarChildren=findViewById(R.id.tv_navChildren);
+        tvNavbarPremium=findViewById(R.id.tv_navPremium);
+        tvNavbarCategory=findViewById(R.id.tv_navCategoties);
 
         // already show the apps fragment class
         getSupportFragmentManager().beginTransaction().replace(R.id.fl_mainContener, appsFragment).commit();
@@ -77,8 +85,7 @@ public class MainActivity extends AppCompatActivity {
                 builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int i) {
-
-                        Toast.makeText()
+                        toastMassage("Thank you");
 //                        // go to the one fragment to another fragment
 //                        FragmentTransaction fragmentTransaction = getParentFragmentManager().beginTransaction();
 //                        fragmentTransaction.replace(R.id.LoginFrameContener, passwordForgotFragment).commit();
@@ -100,6 +107,39 @@ public class MainActivity extends AppCompatActivity {
                 getSupportFragmentManager().beginTransaction().replace(R.id.fl_mainContener, contactsFragment).commit();
             }
         });
+
+        // navication bar
+        tvNavbarForYou.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                toastMassage("For You content is not available.");
+            }
+        });
+        tvNavbarTopChart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                toastMassage("Top Charts content is not available.");
+            }
+        });
+        tvNavbarChildren.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                toastMassage("Children content is not available.");
+            }
+        });
+        tvNavbarPremium.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                toastMassage("Categories content is not available.");
+            }
+        });
+        tvNavbarCategory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                toastMassage("The Categories are not available.");
+            }
+        });
+
     }
 
     // create a toastMassage method which accept the String parameter
