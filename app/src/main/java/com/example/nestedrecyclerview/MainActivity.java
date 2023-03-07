@@ -2,19 +2,18 @@ package com.example.nestedrecyclerview;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentTransaction;
-
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.nestedrecyclerview.FragmentsView.AppsFragment;
 import com.example.nestedrecyclerview.FragmentsView.ContactsFragment;
 import com.example.nestedrecyclerview.FragmentsView.GamesFragment;
@@ -31,10 +30,11 @@ public class MainActivity extends AppCompatActivity {
 //    ArrayList<ChildModelClass> recentlyWatchList;
 //    ArrayList<ChildModelClass> latestList;
 
+    EditText editText_search;
     Button btnNotification;
     ImageView ivUserProfile;
     TextView tvNavbarForYou, tvNavbarTopChart, tvNavbarChildren, tvNavbarPremium,tvNavbarCategory;
-    @SuppressLint({"NotifyDataSetChanged", "MissingInflatedId"})
+    @SuppressLint({"NotifyDataSetChanged", "MissingInflatedId", "ClickableViewAccessibility"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         ContactsFragment contactsFragment = new ContactsFragment();
         GamesFragment gamesFragment = new GamesFragment();
         AppsFragment appsFragment = new AppsFragment();
+        editText_search = findViewById(R.id.editText_search);
         ivUserProfile= findViewById(R.id.iv_userProfile);
         btnNotification =findViewById(R.id.btn_notification);
 
@@ -74,6 +75,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        // edit text fields
+        editText_search.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent event) {
+                view.setFocusable(true);
+                view.setFocusableInTouchMode(true);
+                return false;
+            }
+        });
         // notification button
         btnNotification.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,10 +97,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int i) {
                         toastMassage("Thank you");
-//                        // go to the one fragment to another fragment
-//                        FragmentTransaction fragmentTransaction = getParentFragmentManager().beginTransaction();
-//                        fragmentTransaction.replace(R.id.LoginFrameContener, passwordForgotFragment).commit();
-                    }
+                   }
                 });
                 // press the No then cancel to logout the app
                 builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -144,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
 
     // create a toastMassage method which accept the String parameter
     public void toastMassage(String message){
-        Toast.makeText(new MainActivity(), message, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 }
 
