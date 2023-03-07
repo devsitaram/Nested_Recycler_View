@@ -11,7 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.nestedrecyclerview.PojoModel.ChildModelClass;
+import com.example.nestedrecyclerview.PojoModel.ChildAppsModelClass;
 import com.example.nestedrecyclerview.R;
 
 import java.util.List;
@@ -19,9 +19,8 @@ import java.util.List;
 public class ChildAppsAdapter extends RecyclerView.Adapter<ChildAppsAdapter.ViewHolder> {
 
     Context context;
-    List<ChildModelClass> childModelClassList;
-
-    public ChildAppsAdapter(List<ChildModelClass> childModelClassList, Context context){
+    List<ChildAppsModelClass> childModelClassList;
+    public ChildAppsAdapter(List<ChildAppsModelClass> childModelClassList, Context context){
         this.context=context;
         this.childModelClassList=childModelClassList;
     }

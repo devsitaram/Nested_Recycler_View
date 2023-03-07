@@ -14,8 +14,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.nestedrecyclerview.AdapterController.ParentAppsAdapter;
-import com.example.nestedrecyclerview.PojoModel.ChildModelClass;
-import com.example.nestedrecyclerview.PojoModel.ParentModelClass;
+import com.example.nestedrecyclerview.PojoModel.ChildAppsModelClass;
+import com.example.nestedrecyclerview.PojoModel.ParentAppsModelClass;
 import com.example.nestedrecyclerview.R;
 
 import java.util.ArrayList;
@@ -25,11 +25,11 @@ public class AppsFragment extends Fragment {
 
     RecyclerView recyclerView;
     ParentAppsAdapter parentAdapter;
-    ArrayList<ParentModelClass> parentModelClassList;
-    ArrayList<ChildModelClass> childModelClassList;
-    ArrayList<ChildModelClass> favoriteList;
-    ArrayList<ChildModelClass> recentlyWatchList;
-    ArrayList<ChildModelClass> latestList;
+    ArrayList<ParentAppsModelClass> parentModelClassList;
+    ArrayList<ChildAppsModelClass> childModelClassList;
+    ArrayList<ChildAppsModelClass> favoriteList;
+    ArrayList<ChildAppsModelClass> recentlyWatchList;
+    ArrayList<ChildAppsModelClass> latestList;
     View viewApps;
 
     @Override
@@ -57,40 +57,40 @@ public class AppsFragment extends Fragment {
 
         // latest list
         latestList = new ArrayList<>();
-        latestList.add(new ChildModelClass(R.mipmap.img_messenger, "Messenger", "⭐⭐"));
-        latestList.add(new ChildModelClass(R.mipmap.img_facebook, "Facebook", "⭐⭐⭐"));
-        latestList.add(new ChildModelClass(R.mipmap.img_instragram, "Instragram", "⭐⭐"));
-        latestList.add(new ChildModelClass(R.mipmap.img_whatsapp, "Whatsapp", "⭐⭐"));
-        latestList.add(new ChildModelClass(R.mipmap.img_twitter, "Twitter", "⭐⭐⭐"));
-        latestList.add(new ChildModelClass(R.mipmap.img_imo, "Imo", "⭐⭐"));
-        parentModelClassList.add(new ParentModelClass("Tending App", latestList));
+        latestList.add(new ChildAppsModelClass(R.mipmap.img_messenger, "Messenger", "⭐⭐"));
+        latestList.add(new ChildAppsModelClass(R.mipmap.img_facebook, "Facebook", "⭐⭐⭐"));
+        latestList.add(new ChildAppsModelClass(R.mipmap.img_instragram, "Instragram", "⭐⭐"));
+        latestList.add(new ChildAppsModelClass(R.mipmap.img_whatsapp, "Whatsapp", "⭐⭐"));
+        latestList.add(new ChildAppsModelClass(R.mipmap.img_twitter, "Twitter", "⭐⭐⭐"));
+        latestList.add(new ChildAppsModelClass(R.mipmap.img_imo, "Imo", "⭐⭐"));
+        parentModelClassList.add(new ParentAppsModelClass("Tending App", latestList));
 
         recentlyWatchList = new ArrayList<>();
-        recentlyWatchList.add(new ChildModelClass(R.mipmap.img_alarm, "Messenger", "⭐⭐⭐"));
-        recentlyWatchList.add(new ChildModelClass(R.mipmap.img_learn_coding, "Code Learn", "⭐⭐"));
-        recentlyWatchList.add(new ChildModelClass(R.mipmap.img_user_profile, "Contact", "⭐⭐"));
-        recentlyWatchList.add(new ChildModelClass(R.mipmap.img_viber, "Viber", "⭐⭐⭐"));
-        recentlyWatchList.add(new ChildModelClass(R.mipmap.img_meets, "Meets", "⭐⭐"));
-        recentlyWatchList.add(new ChildModelClass(R.mipmap.img_java, "Java", "⭐⭐⭐"));
-        parentModelClassList.add(new ParentModelClass("Recently Watch", recentlyWatchList));
+        recentlyWatchList.add(new ChildAppsModelClass(R.mipmap.img_alarm, "Messenger", "⭐⭐⭐"));
+        recentlyWatchList.add(new ChildAppsModelClass(R.mipmap.img_learn_coding, "Code Learn", "⭐⭐"));
+        recentlyWatchList.add(new ChildAppsModelClass(R.mipmap.img_user_profile, "Contact", "⭐⭐"));
+        recentlyWatchList.add(new ChildAppsModelClass(R.mipmap.img_viber, "Viber", "⭐⭐⭐"));
+        recentlyWatchList.add(new ChildAppsModelClass(R.mipmap.img_meets, "Meets", "⭐⭐"));
+        recentlyWatchList.add(new ChildAppsModelClass(R.mipmap.img_java, "Java", "⭐⭐⭐"));
+        parentModelClassList.add(new ParentAppsModelClass("Recently Watch", recentlyWatchList));
 
         // favorite list
         favoriteList = new ArrayList<>();
-        favoriteList.add(new ChildModelClass(R.mipmap.img_music, "Music", "⭐⭐"));
-        favoriteList.add(new ChildModelClass(R.mipmap.img_youtube, "Youtube", "⭐⭐⭐"));
-        favoriteList.add(new ChildModelClass(R.mipmap.img_gamil, "Gmail", "⭐⭐"));
-        favoriteList.add(new ChildModelClass(R.mipmap.img_google, "Google", "⭐⭐⭐"));
-        favoriteList.add(new ChildModelClass(R.mipmap.img_coc, "COC", "⭐⭐⭐"));
-        parentModelClassList.add(new ParentModelClass("Favorites", favoriteList));
+        favoriteList.add(new ChildAppsModelClass(R.mipmap.img_music, "Music", "⭐⭐"));
+        favoriteList.add(new ChildAppsModelClass(R.mipmap.img_youtube, "Youtube", "⭐⭐⭐"));
+        favoriteList.add(new ChildAppsModelClass(R.mipmap.img_gamil, "Gmail", "⭐⭐"));
+        favoriteList.add(new ChildAppsModelClass(R.mipmap.img_google, "Google", "⭐⭐⭐"));
+        favoriteList.add(new ChildAppsModelClass(R.mipmap.img_coc, "COC", "⭐⭐⭐"));
+        parentModelClassList.add(new ParentAppsModelClass("Favorites", favoriteList));
 
         // child model clas
         childModelClassList = new ArrayList<>();
-        childModelClassList.add(new ChildModelClass(R.mipmap.img_java, "Java", "⭐⭐⭐"));
-        childModelClassList.add(new ChildModelClass(R.mipmap.img_html, "HTML", "⭐⭐"));
-        childModelClassList.add(new ChildModelClass(R.mipmap.img_python, "Python", "⭐"));
-        childModelClassList.add(new ChildModelClass(R.mipmap.img_learn_coding, "Learn Code", "⭐⭐⭐"));
-        childModelClassList.add(new ChildModelClass(R.mipmap.img_databases, "Databases", "⭐⭐"));
-        parentModelClassList.add(new ParentModelClass("Grade", childModelClassList));
+        childModelClassList.add(new ChildAppsModelClass(R.mipmap.img_java, "Java", "⭐⭐⭐"));
+        childModelClassList.add(new ChildAppsModelClass(R.mipmap.img_html, "HTML", "⭐⭐"));
+        childModelClassList.add(new ChildAppsModelClass(R.mipmap.img_python, "Python", "⭐"));
+        childModelClassList.add(new ChildAppsModelClass(R.mipmap.img_learn_coding, "Learn Code", "⭐⭐⭐"));
+        childModelClassList.add(new ChildAppsModelClass(R.mipmap.img_databases, "Databases", "⭐⭐"));
+        parentModelClassList.add(new ParentAppsModelClass("Grade", childModelClassList));
 
         // adding
         parentAdapter = new ParentAppsAdapter(getActivity(), parentModelClassList);

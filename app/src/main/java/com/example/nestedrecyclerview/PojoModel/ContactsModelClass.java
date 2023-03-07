@@ -4,11 +4,11 @@ import android.graphics.Color;
 
 import java.util.Random;
 
-public class GamesModelClass {
+public class ContactsModelClass {
     public String name;
     public String number;
 
-    public GamesModelClass(String name, String number) {
+    public ContactsModelClass(String name, String number) {
         this.name = name;
         this.number = number;
     }

@@ -1,70 +1,66 @@
 package com.example.nestedrecyclerview.FragmentsView;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.DividerItemDecoration;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.nestedrecyclerview.AdapterController.GamesAdapter;
-import com.example.nestedrecyclerview.PojoModel.GamesModelClass;
-import com.example.nestedrecyclerview.PojoModel.ParentModelClass;
 import com.example.nestedrecyclerview.R;
 
-import java.util.ArrayList;
-import java.util.Objects;
-
+/**
+ * A simple {@link Fragment} subclass.
+ * Use the {@link GamesFragment#newInstance} factory method to
+ * create an instance of this fragment.
+ */
 public class GamesFragment extends Fragment {
 
-    RecyclerView recyclerView;
-    ArrayList<GamesModelClass> gamesModelClassList;
-    View viewGames;
+    // TODO: Rename parameter arguments, choose names that match
+    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+    private static final String ARG_PARAM1 = "param1";
+    private static final String ARG_PARAM2 = "param2";
+
+    // TODO: Rename and change types of parameters
+    private String mParam1;
+    private String mParam2;
+
+    public GamesFragment() {
+        // Required empty public constructor
+    }
+
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     *
+     * @param param1 Parameter 1.
+     * @param param2 Parameter 2.
+     * @return A new instance of fragment GamesFragment.
+     */
+    // TODO: Rename and change types and number of parameters
+    public static GamesFragment newInstance(String param1, String param2) {
+        GamesFragment fragment = new GamesFragment();
+        Bundle args = new Bundle();
+        args.putString(ARG_PARAM1, param1);
+        args.putString(ARG_PARAM2, param2);
+        fragment.setArguments(args);
+        return fragment;
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam2 = getArguments().getString(ARG_PARAM2);
+        }
     }
 
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return viewGames = inflater.inflate(R.layout.fragment_games, container, false);
-    }
-
-    public void onViewCreated(@NonNull View view, Bundle savedInstenceState) {
-        super.onViewCreated(view, savedInstenceState);
-        recyclerView = viewGames.findViewById(R.id.rv_games);
-
-        // used the divider
-        @SuppressLint("UseRequireInsteadOfGet")
-        RecyclerView.ItemDecoration divider = new DividerItemDecoration(getActivity(),DividerItemDecoration.HORIZONTAL);
-        recyclerView.addItemDecoration(divider);
-
-        gamesModelClassList = new ArrayList<>();
-        gamesModelClassList.add(new GamesModelClass("Facebook", "9808765123"));
-        gamesModelClassList.add(new GamesModelClass("Google", "9710509875"));
-        gamesModelClassList.add(new GamesModelClass("Learn Coding", "980126833"));
-        gamesModelClassList.add(new GamesModelClass("Twitter", "9811250109"));
-        gamesModelClassList.add(new GamesModelClass("Alarms", "9812345670"));
-        gamesModelClassList.add(new GamesModelClass("Tik Tok", "9701375013"));
-        gamesModelClassList.add(new GamesModelClass("Messenger", "9835012344"));
-        gamesModelClassList.add(new GamesModelClass("Instragram", "98025225"));
-        gamesModelClassList.add(new GamesModelClass("Audio", "9876893210"));
-        gamesModelClassList.add(new GamesModelClass("Youtube", "9713093422"));
-        gamesModelClassList.add(new GamesModelClass("Java", "9705764392"));
-        gamesModelClassList.add(new GamesModelClass("Meets", "9812345601"));
-
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
-        recyclerView.setLayoutManager(linearLayoutManager);
-        GamesAdapter adapter = new GamesAdapter(getActivity(), gamesModelClassList);
-        recyclerView.setAdapter(adapter);
-
+        return inflater.inflate(R.layout.fragment_games, container, false);
     }
 }

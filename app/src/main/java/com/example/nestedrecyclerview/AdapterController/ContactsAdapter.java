@@ -10,18 +10,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.nestedrecyclerview.PojoModel.GamesModelClass;
+import com.example.nestedrecyclerview.PojoModel.ContactsModelClass;
 import com.example.nestedrecyclerview.R;
 
 import java.util.ArrayList;
-import java.util.Random;
 
-public class GamesAdapter extends RecyclerView.Adapter<GamesAdapter.ViewHolder> {
+public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHolder> {
 
     Context context;
-    ArrayList<GamesModelClass> gamesModelClassesArrayList;
+    ArrayList<ContactsModelClass> gamesModelClassesArrayList;
 
-    public GamesAdapter(Context context, ArrayList<GamesModelClass> gamesModelClassesArrayList) {
+    public ContactsAdapter(Context context, ArrayList<ContactsModelClass> gamesModelClassesArrayList) {
         this.context = context;
         this.gamesModelClassesArrayList = gamesModelClassesArrayList;
     }
@@ -30,16 +29,16 @@ public class GamesAdapter extends RecyclerView.Adapter<GamesAdapter.ViewHolder> 
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         @SuppressLint("InflateParams")
-        View view = LayoutInflater.from(context).inflate(R.layout.games_items, null, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.contacts_items, null, false);
         return new ViewHolder(view);
     }
 
     @SuppressLint("NotifyDataSetChanged")
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        GamesModelClass gamesModelClass = gamesModelClassesArrayList.get(position);
+        ContactsModelClass gamesModelClass = gamesModelClassesArrayList.get(position);
         holder.tvAlphabet.setText(gamesModelClass.getProfileLetter().toString());
-        holder.tvAlphabet.setBackgroundColor(GamesModelClass.getColor());
+        holder.tvAlphabet.setBackgroundColor(ContactsModelClass.getColor());
 
         holder.tvName.setText(gamesModelClassesArrayList.get(position).name);
         holder.tvNumber.setText(gamesModelClassesArrayList.get(position).number);

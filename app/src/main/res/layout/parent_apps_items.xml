@@ -8,17 +8,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="5dp"
+        android:padding="10dp"
         tools:ignore="UselessParent">
 
         <TextView
             android:id="@+id/tv_parent_title"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
             android:layout_marginBottom="5dp"
             android:text="Title"
             android:textStyle="bold"
-            android:textSize="20sp"
+            android:textSize="18sp"
             tools:ignore="HardcodedText" />
 
         <androidx.recyclerview.widget.RecyclerView

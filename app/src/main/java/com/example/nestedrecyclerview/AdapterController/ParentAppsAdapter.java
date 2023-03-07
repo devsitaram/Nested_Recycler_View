@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.nestedrecyclerview.PojoModel.ParentModelClass;
+import com.example.nestedrecyclerview.PojoModel.ParentAppsModelClass;
 import com.example.nestedrecyclerview.R;
 
 import java.util.List;
@@ -19,8 +19,8 @@ import java.util.List;
 public class ParentAppsAdapter extends RecyclerView.Adapter<ParentAppsAdapter.ViewHolder> {
 
     Context context;
-    List<ParentModelClass> parentModelClassList;
-    public ParentAppsAdapter(Context context, List<ParentModelClass> parentModelClassList){
+    List<ParentAppsModelClass> parentModelClassList;
+    public ParentAppsAdapter(Context context, List<ParentAppsModelClass> parentModelClassList){
         this.context=context;
         this.parentModelClassList=parentModelClassList;
     }
@@ -58,6 +58,5 @@ public class ParentAppsAdapter extends RecyclerView.Adapter<ParentAppsAdapter.Vi
             rv_child=itemView.findViewById(R.id.rv_child);
             tv_parent_title=itemView.findViewById(R.id.tv_parent_title);
         }
-
     }
 }

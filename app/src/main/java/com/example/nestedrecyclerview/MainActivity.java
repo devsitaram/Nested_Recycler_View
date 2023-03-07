@@ -6,8 +6,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 
 import com.example.nestedrecyclerview.FragmentsView.AppsFragment;
+import com.example.nestedrecyclerview.FragmentsView.ContactsFragment;
 import com.example.nestedrecyclerview.FragmentsView.GamesFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -22,15 +26,20 @@ public class MainActivity extends AppCompatActivity {
 //    ArrayList<ChildModelClass> recentlyWatchList;
 //    ArrayList<ChildModelClass> latestList;
 
-    @SuppressLint("NotifyDataSetChanged")
+    Button btnNotification;
+    ImageView ivUserProfile;
+    @SuppressLint({"NotifyDataSetChanged", "MissingInflatedId"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        // variable initialize
         BottomNavigationView bottomNavigationView = findViewById(R.id.btnNavicationIcon);
+        ContactsFragment contactsFragment = new ContactsFragment();
         GamesFragment gamesFragment = new GamesFragment();
         AppsFragment appsFragment = new AppsFragment();
+        ivUserProfile= findViewById(R.id.iv_userProfile);
+        btnNotification =findViewById(R.id.btn_notification);
 
         // already show the apps fragment class
         getSupportFragmentManager().beginTransaction().replace(R.id.fl_mainContener, appsFragment).commit();
@@ -52,7 +61,23 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        // notification button
+        btnNotification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+        // contact class
+        ivUserProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.fl_mainContener, contactsFragment).commit();
+            }
+        });
     }
+}
 
 //        Objects.requireNonNull(getSupportActionBar()).hide();
 
@@ -105,4 +130,4 @@ public class MainActivity extends AppCompatActivity {
 //        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 //        recyclerView.setAdapter(parentAdapter);
 //        parentAdapter.notifyDataSetChanged();
-}
+//}
