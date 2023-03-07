@@ -2,13 +2,17 @@ package com.example.nestedrecyclerview;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.nestedrecyclerview.FragmentsView.AppsFragment;
 import com.example.nestedrecyclerview.FragmentsView.ContactsFragment;
@@ -66,7 +70,27 @@ public class MainActivity extends AppCompatActivity {
         btnNotification.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                builder.setTitle("Notification");
+                builder.setMessage("No new notifications");
+                // press the yes the logout the app
+                builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int i) {
 
+                        Toast.makeText()
+//                        // go to the one fragment to another fragment
+//                        FragmentTransaction fragmentTransaction = getParentFragmentManager().beginTransaction();
+//                        fragmentTransaction.replace(R.id.LoginFrameContener, passwordForgotFragment).commit();
+                    }
+                });
+                // press the No then cancel to logout the app
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                });builder.show();
             }
         });
         // contact class
@@ -76,6 +100,11 @@ public class MainActivity extends AppCompatActivity {
                 getSupportFragmentManager().beginTransaction().replace(R.id.fl_mainContener, contactsFragment).commit();
             }
         });
+    }
+
+    // create a toastMassage method which accept the String parameter
+    public void toastMassage(String message){
+        Toast.makeText(new MainActivity(), message, Toast.LENGTH_SHORT).show();
     }
 }
 
