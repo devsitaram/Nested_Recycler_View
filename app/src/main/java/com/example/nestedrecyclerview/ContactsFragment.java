@@ -1,4 +1,4 @@
-package com.example.nestedrecyclerview.View.Fragments;
+package com.example.nestedrecyclerview;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;

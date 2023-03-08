@@ -4,23 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".View.Activity.MainActivity">
+    tools:context=".MainActivity">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints">
+        tools:ignore="MissingConstraints,ScrollViewCount">
 
         <LinearLayout
-            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toTopOf="@+id/btnNavicationIcon"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0">
+            tools:ignore="Orientation">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -80,63 +74,69 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <com.google.android.material.tabs.TabLayout
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     tools:ignore="ScrollViewSize">
 
-                    <com.google.android.material.tabs.TabItem
-                        android:id="@+id/tv_navForYou"
+                    <com.google.android.material.tabs.TabLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:padding="10dp"
-                        android:text="For you"
-                        android:textSize="16sp"
-                        tools:ignore="HardcodedText" />
+                        tools:ignore="ScrollViewSize">
 
-                    <com.google.android.material.tabs.TabItem
-                        android:id="@+id/tv_navTopCharts"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:padding="10dp"
-                        android:text="Top charts"
-                        android:textSize="16sp"
-                        tools:ignore="HardcodedText" />
+                        <com.google.android.material.tabs.TabItem
+                            android:id="@+id/tv_navForYou"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:padding="10dp"
+                            android:text="For you"
+                            android:textSize="16sp"
+                            tools:ignore="HardcodedText" />
 
-                    <com.google.android.material.tabs.TabItem
-                        android:id="@+id/tv_navChildren"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:padding="10dp"
-                        android:text="Children"
-                        android:textSize="16sp"
-                        tools:ignore="HardcodedText" />
+                        <com.google.android.material.tabs.TabItem
+                            android:id="@+id/tv_navTopCharts"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:padding="10dp"
+                            android:text="Top charts"
+                            android:textSize="16sp"
+                            tools:ignore="HardcodedText" />
 
-                    <com.google.android.material.tabs.TabItem
-                        android:id="@+id/tv_navPremium"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:padding="10dp"
-                        android:text="Premium"
-                        android:textSize="16sp"
-                        tools:ignore="HardcodedText" />
+                        <com.google.android.material.tabs.TabItem
+                            android:id="@+id/tv_navChildren"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:padding="10dp"
+                            android:text="Children"
+                            android:textSize="16sp"
+                            tools:ignore="HardcodedText" />
 
-                    <com.google.android.material.tabs.TabItem
-                        android:id="@+id/tv_navCategoties"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:padding="10dp"
-                        android:text="Categoties"
-                        android:textSize="16sp"
-                        tools:ignore="HardcodedText" />
+                        <com.google.android.material.tabs.TabItem
+                            android:id="@+id/tv_navPremium"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:padding="10dp"
+                            android:text="Premium"
+                            android:textSize="16sp"
+                            tools:ignore="HardcodedText" />
 
-                </com.google.android.material.tabs.TabLayout>
+                        <com.google.android.material.tabs.TabItem
+                            android:id="@+id/tv_navCategoties"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:padding="10dp"
+                            android:text="Categoties"
+                            android:textSize="16sp"
+                            tools:ignore="HardcodedText" />
+
+                    </com.google.android.material.tabs.TabLayout>
+                </LinearLayout>
             </HorizontalScrollView>
 
             <TextView
@@ -148,13 +148,10 @@
                 android:id="@+id/fl_mainContener"
                 android:layout_width="match_parent"
                 android:layout_height="465dp"
-                tools:ignore="MissingConstraints,UselessParent">
-
-            </FrameLayout>
+                tools:ignore="MissingConstraints,UselessParent" />
 
         </LinearLayout>
     </ScrollView>
-
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/btnNavicationIcon"

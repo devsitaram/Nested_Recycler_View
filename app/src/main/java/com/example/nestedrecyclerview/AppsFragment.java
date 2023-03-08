@@ -1,4 +1,4 @@
-package com.example.nestedrecyclerview.View.Fragments;
+package com.example.nestedrecyclerview;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -47,7 +47,7 @@ public class AppsFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        recyclerView = viewApps.findViewById(R.id.rv_parent); // rv_parent set in recycler view
+        recyclerView = viewApps.findViewById(R.id.rv_parentAppsContent); // rv_parent set in recycler view
         parentModelClassList = new ArrayList<>();
 
         // used the divider
