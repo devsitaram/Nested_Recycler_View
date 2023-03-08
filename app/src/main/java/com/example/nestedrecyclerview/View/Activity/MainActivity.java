@@ -1,7 +1,8 @@
-package com.example.nestedrecyclerview;
+package com.example.nestedrecyclerview.View.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -14,9 +15,11 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.example.nestedrecyclerview.FragmentsView.AppsFragment;
-import com.example.nestedrecyclerview.FragmentsView.ContactsFragment;
-import com.example.nestedrecyclerview.FragmentsView.GamesFragment;
+
+import com.example.nestedrecyclerview.View.Fragments.AppsFragment;
+import com.example.nestedrecyclerview.View.Fragments.ContactsFragment;
+import com.example.nestedrecyclerview.View.Fragments.GamesFragment;
+import com.example.nestedrecyclerview.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
@@ -33,26 +36,27 @@ public class MainActivity extends AppCompatActivity {
     EditText editText_search;
     Button btnNotification;
     ImageView ivUserProfile;
-    TextView tvNavbarForYou, tvNavbarTopChart, tvNavbarChildren, tvNavbarPremium,tvNavbarCategory;
+    TextView tvNavbarForYou, tvNavbarTopChart, tvNavbarChildren, tvNavbarPremium, tvNavbarCategory;
+
     @SuppressLint({"NotifyDataSetChanged", "MissingInflatedId", "ClickableViewAccessibility"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // variable initialize
+        // initialize the object
         BottomNavigationView bottomNavigationView = findViewById(R.id.btnNavicationIcon);
         ContactsFragment contactsFragment = new ContactsFragment();
         GamesFragment gamesFragment = new GamesFragment();
         AppsFragment appsFragment = new AppsFragment();
+        // variable initialize
         editText_search = findViewById(R.id.editText_search);
-        ivUserProfile= findViewById(R.id.iv_userProfile);
-        btnNotification =findViewById(R.id.btn_notification);
-
-        tvNavbarForYou=findViewById(R.id.tv_navForYou);
-        tvNavbarTopChart=findViewById(R.id.tv_navTopCharts);
-        tvNavbarChildren=findViewById(R.id.tv_navChildren);
-        tvNavbarPremium=findViewById(R.id.tv_navPremium);
-        tvNavbarCategory=findViewById(R.id.tv_navCategoties);
+        ivUserProfile = findViewById(R.id.iv_userProfile);
+        btnNotification = findViewById(R.id.btn_notification);
+        tvNavbarForYou = findViewById(R.id.tv_navForYou);
+        tvNavbarTopChart = findViewById(R.id.tv_navTopCharts);
+        tvNavbarChildren = findViewById(R.id.tv_navChildren);
+        tvNavbarPremium = findViewById(R.id.tv_navPremium);
+        tvNavbarCategory = findViewById(R.id.tv_navCategoties);
 
         // already show the apps fragment class
         getSupportFragmentManager().beginTransaction().replace(R.id.fl_mainContener, appsFragment).commit();
@@ -75,7 +79,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
         // edit text fields
         editText_search.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -97,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int i) {
                         toastMassage("Thank you");
-                   }
+                    }
                 });
                 // press the No then cancel to logout the app
                 builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -105,7 +108,8 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         dialogInterface.dismiss();
                     }
-                });builder.show();
+                });
+                builder.show();
             }
         });
         // contact class
@@ -116,42 +120,43 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
         // navication bar
-        tvNavbarForYou.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                toastMassage("For You content is not available.");
-            }
-        });
-        tvNavbarTopChart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                toastMassage("Top Charts content is not available.");
-            }
-        });
-        tvNavbarChildren.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                toastMassage("Children content is not available.");
-            }
-        });
-        tvNavbarPremium.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                toastMassage("Categories content is not available.");
-            }
-        });
-        tvNavbarCategory.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                toastMassage("The Categories are not available.");
-            }
-        });
+//        tvNavbarForYou.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                toastMassage("For You content is not available.");
+//            }
+//        });
+//        tvNavbarTopChart.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                toastMassage("Top Charts content is not available.");
+//            }
+//        });
+//        tvNavbarChildren.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                toastMassage("Children content is not available.");
+//            }
+//        });
+//        tvNavbarPremium.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                toastMassage("Categories content is not available.");
+//            }
+//        });
+//        tvNavbarCategory.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                toastMassage("The Categories are not available.");
+//            }
+//        });
 
     }
 
     // create a toastMassage method which accept the String parameter
-    public void toastMassage(String message){
+    public void toastMassage(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 }

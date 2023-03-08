@@ -13,13 +13,12 @@
         tools:ignore="UselessParent">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cv_child_item"
             android:layout_width="60dp"
             android:layout_height="60dp"
             app:cardCornerRadius="30dp">
 
             <TextView
-                android:id="@+id/iv_games_item"
+                android:id="@+id/iv_contact_item"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:contentDescription="@null"
@@ -39,7 +38,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tvName"
+                android:id="@+id/tvUserName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="User app"

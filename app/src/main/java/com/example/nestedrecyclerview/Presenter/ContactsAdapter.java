@@ -1,4 +1,4 @@
-package com.example.nestedrecyclerview.AdapterController;
+package com.example.nestedrecyclerview.Presenter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.nestedrecyclerview.PojoModel.ContactsModelClass;
+import com.example.nestedrecyclerview.Model.ContactsModel;
 import com.example.nestedrecyclerview.R;
 
 import java.util.ArrayList;
@@ -18,11 +18,11 @@ import java.util.ArrayList;
 public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHolder> {
 
     Context context;
-    ArrayList<ContactsModelClass> gamesModelClassesArrayList;
+    ArrayList<ContactsModel> contactsModelClassesArrayList;
 
-    public ContactsAdapter(Context context, ArrayList<ContactsModelClass> gamesModelClassesArrayList) {
+    public ContactsAdapter(Context context, ArrayList<ContactsModel> contactsModelClassesArrayList) {
         this.context = context;
-        this.gamesModelClassesArrayList = gamesModelClassesArrayList;
+        this.contactsModelClassesArrayList = contactsModelClassesArrayList;
     }
 
     @NonNull
@@ -36,17 +36,17 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHo
     @SuppressLint("NotifyDataSetChanged")
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        ContactsModelClass gamesModelClass = gamesModelClassesArrayList.get(position);
+        ContactsModel gamesModelClass = contactsModelClassesArrayList.get(position);
         holder.tvAlphabet.setText(gamesModelClass.getProfileLetter().toString());
-        holder.tvAlphabet.setBackgroundColor(ContactsModelClass.getColor());
+        holder.tvAlphabet.setBackgroundColor(ContactsModel.getColor());
 
-        holder.tvName.setText(gamesModelClassesArrayList.get(position).name);
-        holder.tvNumber.setText(gamesModelClassesArrayList.get(position).number);
+        holder.tvName.setText(contactsModelClassesArrayList.get(position).name);
+        holder.tvNumber.setText(contactsModelClassesArrayList.get(position).number);
     }
 
     @Override
     public int getItemCount() {
-        return gamesModelClassesArrayList.size();
+        return contactsModelClassesArrayList.size();
     }
 
     // sub classes
@@ -55,8 +55,8 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHo
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            tvAlphabet = itemView.findViewById(R.id.iv_games_item);
-            tvName = itemView.findViewById(R.id.tvName);
+            tvAlphabet = itemView.findViewById(R.id.iv_contact_item);
+            tvName = itemView.findViewById(R.id.tvUserName);
             tvNumber = itemView.findViewById(R.id.tvNumber);
         }
     }

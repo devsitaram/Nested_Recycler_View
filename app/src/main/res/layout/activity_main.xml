@@ -1,160 +1,160 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".MainActivity">
+    tools:context=".View.Activity.MainActivity">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/btnNavicationIcon"
-        app:layout_constraintVertical_bias="0">
+        tools:ignore="MissingConstraints">
 
         <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/btnNavicationIcon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0">
 
-            <EditText
-                android:id="@+id/editText_search"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="5dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginBottom="2dp"
-                android:background="@drawable/edit_text_shape"
-                android:drawableStart="@drawable/baseline_search_24"
-                android:drawableEnd="@drawable/outline_keyboard_voice_24"
-                android:ems="10"
-                android:padding="10dp"
-                android:focusable="false"
-                android:hint="Search for ..."
-                android:inputType="textPersonName"
-                tools:ignore="Autofill,HardcodedText" />
-
-            <Button
-                android:id="@+id/btn_notification"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp"
-                android:layout_gravity="center"
-                android:background="@drawable/outline_notifications_24" />
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp"
-                android:layout_gravity="center"
-                app:cardCornerRadius="15dp">
-
-                <ImageView
-                    android:id="@+id/iv_userProfile"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:contentDescription="@null"
-                    android:src="@mipmap/img_user_profile"
-                    android:textAlignment="center" />
-
-            </androidx.cardview.widget.CardView>
-        </LinearLayout>
-
-        <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <GridLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:ignore="ScrollViewSize">
+                android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/tv_navForYou"
+                <EditText
+                    android:id="@+id/editText_search"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="@drawable/edit_text_shape"
+                    android:drawableStart="@drawable/baseline_search_24"
+                    android:drawableEnd="@drawable/outline_keyboard_voice_24"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:hint="Search for ..."
+                    android:inputType="textPersonName"
+                    android:padding="10dp"
+                    tools:ignore="Autofill,HardcodedText" />
+
+                <Button
+                    android:id="@+id/btn_notification"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/outline_notifications_24" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    app:cardCornerRadius="15dp">
+
+                    <ImageView
+                        android:id="@+id/iv_userProfile"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:contentDescription="@null"
+                        android:src="@mipmap/img_user_profile"
+                        android:textAlignment="center" />
+
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.tabs.TabLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:layout_marginStart="10dp"
-                    android:text="For you"
-                    android:textSize="16sp"
-                    tools:ignore="HardcodedText" />
+                    tools:ignore="ScrollViewSize">
 
-                <TextView
-                    android:id="@+id/tv_navTopCharts"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:layout_marginStart="10dp"
-                    android:text="Top charts"
-                    android:textSize="16sp"
-                    tools:ignore="HardcodedText" />
+                    <com.google.android.material.tabs.TabItem
+                        android:id="@+id/tv_navForYou"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:padding="10dp"
+                        android:text="For you"
+                        android:textSize="16sp"
+                        tools:ignore="HardcodedText" />
 
-                <TextView
-                    android:id="@+id/tv_navChildren"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:layout_marginStart="10dp"
-                    android:text="Children"
-                    android:textSize="16sp"
-                    tools:ignore="HardcodedText" />
+                    <com.google.android.material.tabs.TabItem
+                        android:id="@+id/tv_navTopCharts"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:padding="10dp"
+                        android:text="Top charts"
+                        android:textSize="16sp"
+                        tools:ignore="HardcodedText" />
 
-                <TextView
-                    android:id="@+id/tv_navPremium"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:layout_marginStart="10dp"
-                    android:text="Premium"
-                    android:textSize="16sp"
-                    tools:ignore="HardcodedText" />
+                    <com.google.android.material.tabs.TabItem
+                        android:id="@+id/tv_navChildren"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:padding="10dp"
+                        android:text="Children"
+                        android:textSize="16sp"
+                        tools:ignore="HardcodedText" />
 
-                <TextView
-                    android:id="@+id/tv_navCategoties"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:padding="10dp"
-                    android:text="Categoties"
-                    android:textSize="16sp"
-                    tools:ignore="HardcodedText" />
+                    <com.google.android.material.tabs.TabItem
+                        android:id="@+id/tv_navPremium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:padding="10dp"
+                        android:text="Premium"
+                        android:textSize="16sp"
+                        tools:ignore="HardcodedText" />
 
-            </GridLayout>
-        </HorizontalScrollView>
+                    <com.google.android.material.tabs.TabItem
+                        android:id="@+id/tv_navCategoties"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:padding="10dp"
+                        android:text="Categoties"
+                        android:textSize="16sp"
+                        tools:ignore="HardcodedText" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#C1D8D5D5" />
+                </com.google.android.material.tabs.TabLayout>
+            </HorizontalScrollView>
 
-        <FrameLayout
-            android:id="@+id/fl_mainContener"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:ignore="MissingConstraints,UselessParent">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#C1D8D5D5" />
 
-        </FrameLayout>
+            <FrameLayout
+                android:id="@+id/fl_mainContener"
+                android:layout_width="match_parent"
+                android:layout_height="465dp"
+                tools:ignore="MissingConstraints,UselessParent">
 
-<!--        <androidx.recyclerview.widget.RecyclerView-->
-<!--            android:id="@+id/rv_parent"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="center"-->
-<!--            tools:ignore="MissingConstraints,UselessLeaf" />-->
+            </FrameLayout>
 
-    </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/btnNavicationIcon"

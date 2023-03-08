@@ -3,10 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FragmentsView.ContactsFragment">
+    tools:context=".View.Fragments.ContactsFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_games"
+        android:id="@+id/rv_contacts"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

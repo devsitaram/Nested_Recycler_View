@@ -1,24 +1,24 @@
-package com.example.nestedrecyclerview.PojoModel;
+package com.example.nestedrecyclerview.Model;
 
 import android.graphics.Color;
 
 import java.util.Random;
 
-public class ContactsModelClass {
+public class ContactsModel {
     public String name;
     public String number;
 
-    public ContactsModelClass(String name, String number) {
+    public ContactsModel(String name, String number) {
         this.name = name;
         this.number = number;
     }
 
 
-    public Character getProfileLetter(){
+    public Character getProfileLetter() {
         return name.charAt(0);
     }
 
-    public static int getColor(){
+    public static int getColor() {
         Integer[] color = new Integer[3];
         color[0] = Color.RED;
         color[1] = Color.BLACK;

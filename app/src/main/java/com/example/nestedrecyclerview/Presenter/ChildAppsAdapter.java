@@ -1,4 +1,4 @@
-package com.example.nestedrecyclerview.AdapterController;
+package com.example.nestedrecyclerview.Presenter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -11,7 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.nestedrecyclerview.PojoModel.ChildAppsModelClass;
+import com.example.nestedrecyclerview.Model.ChildAppsModel;
 import com.example.nestedrecyclerview.R;
 
 import java.util.List;
@@ -19,17 +19,18 @@ import java.util.List;
 public class ChildAppsAdapter extends RecyclerView.Adapter<ChildAppsAdapter.ViewHolder> {
 
     Context context;
-    List<ChildAppsModelClass> childModelClassList;
-    public ChildAppsAdapter(List<ChildAppsModelClass> childModelClassList, Context context){
-        this.context=context;
-        this.childModelClassList=childModelClassList;
+    List<ChildAppsModel> childModelClassList;
+
+    public ChildAppsAdapter(List<ChildAppsModel> childModelClassList, Context context) {
+        this.context = context;
+        this.childModelClassList = childModelClassList;
     }
 
     @NonNull
     @Override
     public ChildAppsAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         @SuppressLint("InflateParams")
-        View view = LayoutInflater.from(context).inflate(R.layout.child_apps_items, null,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.child_apps_items, null, false);
         return new ViewHolder(view);
     }
 
@@ -48,12 +49,13 @@ public class ChildAppsAdapter extends RecyclerView.Adapter<ChildAppsAdapter.View
 
 
     // create the sub class
-    public static class ViewHolder extends RecyclerView.ViewHolder{
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView iv_child_image;
         TextView tvAppName, tvAppStar;
-        public ViewHolder(View itemView){
+
+        public ViewHolder(View itemView) {
             super(itemView);
-            iv_child_image =itemView.findViewById(R.id.iv_child_item);
+            iv_child_image = itemView.findViewById(R.id.iv_child_item);
             tvAppName = itemView.findViewById(R.id.tvAppName);
             tvAppStar = itemView.findViewById(R.id.tvStar);
         }
